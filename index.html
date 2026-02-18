@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>로또 번호 생성기</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <button id="theme-toggle" class="theme-toggle">🌙</button>
-    <div class="container">
-        <h1>Lotto Number Generator</h1>
-        <div class="lotto-numbers"></div>
-        <button id="generate-btn">Generate Numbers</button>
+
+    <div class="wrapper">
+        <h2>🎰 로또 번호 생성기</h2>
+
+        <div class="headerRow">
+            <div>숫자 List</div>
+            <div>행운게이지</div>
+        </div>
+
+        <div class="list" id="list"></div>
+
+        <button id="generate-btn">번호 굴리기</button>
     </div>
 
     <div class="contact-container">
-        <h2>제휴 문의</h2>
+        <h2>🤝 제휴 문의</h2>
         <form action="https://formspree.io/f/mlgwlglo" method="POST">
             <div class="form-group">
                 <label for="name">성함/기업명</label>
