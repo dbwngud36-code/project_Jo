@@ -1,10 +1,33 @@
+:root {
+    --bg-color: #f0f0f0;
+    --container-bg: transparent;
+    --text-color: #333;
+    --card-bg: #fff;
+    --btn-bg: #4CAF50;
+    --btn-text: white;
+    --toggle-bg: #fff;
+    --toggle-text: #333;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --card-bg: #333;
+    --btn-bg: #45a049;
+    --toggle-bg: #333;
+    --toggle-text: #f0f0f0;
+}
+
 body {
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
 }
 
 .container {
@@ -14,20 +37,23 @@ body {
 .lotto-numbers {
     display: flex;
     margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .lotto-number {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--card-bg);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 5px;
+    margin: 5px;
     font-size: 20px;
     font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
 }
 
 #generate-btn {
@@ -35,7 +61,28 @@ body {
     font-size: 16px;
     cursor: pointer;
     border: none;
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--toggle-bg);
+    color: var(--toggle-text);
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
