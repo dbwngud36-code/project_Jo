@@ -91,12 +91,18 @@ body {
 
 .headerRow {
     display: flex;
-    justify-content: space-around; /* 중앙 정렬을 위해 변경 */
+    justify-content: space-between; /* 좌우 끝으로 정렬 */
     font-weight: bold;
     margin-bottom: 15px;
     padding: 0 10px;
-    font-size: 16px; /* 폰트 사이즈 키움 */
+    font-size: 16px;
     opacity: 0.85;
+}
+
+.headerRow > div:last-child { /* 행운 게이지 텍스트만 선택 */
+    text-align: right;
+    flex-grow: 1; /* 오른쪽으로 최대한 밀어내기 */
+    padding-right: 18px; /* 배터리 여백에 맞춰 조정 */
 }
 
 .list {
@@ -104,7 +110,7 @@ body {
     flex-direction: column;
     gap: 20px;
     margin-bottom: 30px;
-    align-items: center; /* Ball 목록 자체를 가운데 정렬 */
+    align-items: center;
 }
 
 .set {
@@ -301,9 +307,10 @@ body {
 .battery.fever .level { background: linear-gradient(90deg, #ff3333, #ff7e7e); }
 .feverText {
     position: absolute;
-    top: -25px; /* 더 위로 이동 */
+    top: 50%; /* 세트 중앙으로 이동 */
     left: 50%;
-    font-size: 14px; /* 크기 증가 */
+    transform: translate(-50%, -50%); /* 정확히 중앙 정렬 */
+    font-size: 14px;
     font-weight: 900;
     color: #ff3333;
     letter-spacing: 1px;
@@ -313,8 +320,8 @@ body {
 }
 
 @keyframes feverText-appear {
-    0% { opacity: 0; transform: translate(-50%, 0) scale(0.5); }
-    100% { opacity: 1; transform: translate(-50%, -100%) scale(1.2); } /* 더 커지게 */
+    0% { opacity: 0; transform: translate(-50%, -20px) scale(0.5); } /* 초기 위치 조정 */
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); } /* 최종 위치 조정 */
 }
 
 /* Info & Contact common */
