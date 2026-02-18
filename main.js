@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ball.classList.add(colorClass(num));
                     ball.classList.add("roll");
                     inner.textContent = num;
-                }, i * 120);
+                }, i * 200);
             });
 
             let luck = Math.floor(Math.random() * 100) + 1;
