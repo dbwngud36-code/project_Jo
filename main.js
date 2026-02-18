@@ -107,20 +107,25 @@ document.addEventListener("DOMContentLoaded", () => {
             set.level.style.width = luck + "%";
 
             const battery = set.level.parentElement;
+            const setContainer = battery.parentElement; // .set 컨테이너
+
+            // 초기화: 세트와 배터리에서 피버 클래스 제거
+            setContainer.classList.remove("fever");
             battery.classList.remove("fever");
-            battery.querySelectorAll(".fire,.feverText").forEach(e => e.remove());
+            setContainer.querySelectorAll(".fire,.feverText").forEach(e => e.remove());
 
             if (fever) {
+                setContainer.classList.add("fever");
                 battery.classList.add("fever");
 
                 const fire = document.createElement("div");
                 fire.className = "fire";
-                battery.appendChild(fire);
+                setContainer.appendChild(fire);
 
                 const text = document.createElement("div");
                 text.className = "feverText";
                 text.textContent = "FEVER";
-                battery.appendChild(text);
+                setContainer.appendChild(text);
             }
         });
     }
