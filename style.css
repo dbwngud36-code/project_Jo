@@ -110,6 +110,7 @@ body {
     right: 30px; /* .set의 오른쪽 패딩과 동일한 값 */
     width: 60px; /* .battery의 너비와 동일한 값 */
     text-align: center; /* 60px 너비 내에서 가운데 정렬 */
+    white-space: nowrap; /* 텍스트를 한 줄로 강제 */
 }
 
 .list {
@@ -314,9 +315,9 @@ body {
 .battery.fever .level { background: linear-gradient(90deg, #ff3333, #ff7e7e); }
 .feverText {
     position: absolute;
-    top: 50%; /* 세트 중앙으로 이동 */
+    top: -5px; /* 볼들 상단으로 이동 (Ball 상단에서 5px 위) */
     left: 50%;
-    transform: translate(-50%, -50%); /* 정확히 중앙 정렬 */
+    transform: translate(-50%, -100%); /* 텍스트 자체 높이만큼 위로 */
     font-size: 14px;
     font-weight: 900;
     color: #ff3333;
@@ -327,8 +328,8 @@ body {
 }
 
 @keyframes feverText-appear {
-    0% { opacity: 0; transform: translate(-50%, -20px) scale(0.5); } /* 초기 위치 조정 */
-    100% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); } /* 최종 위치 조정 */
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); } /* 초기 위치 조정 */
+    100% { opacity: 1; transform: translate(-50%, -100%) scale(1.2); } /* 최종 위치 조정 */
 }
 
 /* Info & Contact common */
