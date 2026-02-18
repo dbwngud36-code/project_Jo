@@ -227,7 +227,7 @@ body {
 }
 
 /* Contact Container */
-.contact-container {
+.contact-container, .disqus-container {
     width: 100%;
     max-width: 430px;
     background-color: var(--card-bg);
@@ -252,5 +252,5 @@ body {
 .submit-btn:hover { background: var(--btn-hover); }
 
 @media (max-width: 480px) {
-    .headerRow, .set, .contact-container { width: 90vw; }
+    .headerRow, .set, .contact-container, .disqus-container { width: 90vw; }
 }
