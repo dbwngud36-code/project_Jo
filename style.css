@@ -91,20 +91,25 @@ body {
 
 .headerRow {
     display: flex;
-    justify-content: space-between; /* 좌우 끝으로 정렬 */
+    justify-content: flex-start; /* 왼쪽 정렬을 기본으로 */
     font-weight: bold;
     margin-bottom: 15px;
     padding: 0 10px;
     font-size: 16px;
     opacity: 0.85;
+    position: relative; /* 자식 absolute 요소의 기준점 */
+    height: 20px; /* 높이를 지정하여 기준점 안정화 */
 }
 
-.headerRow > div { /* 모든 자식 div에 flex 적용 */
-    flex: 1;
+.headerRow > div:first-child {
+    /* 숫자 List는 그대로 유지 */
 }
 
-.headerRow > div:last-child { /* 행운 게이지 텍스트만 선택 */
-    text-align: right; /* 우측 정렬 */
+.headerRow > div:last-child { /* 행운 게이지 텍스트 */
+    position: absolute;
+    right: 30px; /* .set의 오른쪽 패딩과 동일한 값 */
+    width: 60px; /* .battery의 너비와 동일한 값 */
+    text-align: center; /* 60px 너비 내에서 가운데 정렬 */
 }
 
 .list {
