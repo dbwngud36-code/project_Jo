@@ -12,59 +12,106 @@
 <body>
     <button id="theme-toggle" class="theme-toggle">🌙</button>
 
-    <div class="wrapper">
-        <h2>🎰 로또 번호 생성기</h2>
+    <header class="main-header">
+        <nav class="nav-container">
+            <h1 class="logo">🎰 로또플러스</h1>
+            <ul class="nav-links">
+                <li><a href="#generator">생성기</a></li>
+                <li><a href="#how-to-use">이용방법</a></li>
+                <li><a href="#statistics">로또 통계</a></li>
+                <li><a href="#contact">제휴문의</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="headerRow">
-            <div>숫자 List</div>
-            <div>행운게이지</div>
+    <main class="content-wrapper">
+        <section id="generator" class="wrapper">
+            <h2>🎰 로또 번호 생성기</h2>
+            <p class="section-desc">무작위 추출 알고리즘을 활용하여 행운의 번호를 생성합니다. '번호 굴리기' 버튼을 눌러보세요!</p>
+
+            <div class="headerRow">
+                <div>숫자 List</div>
+                <div>행운게이지</div>
+            </div>
+
+            <div class="list" id="list"></div>
+
+            <button id="generate-btn">번호 굴리기</button>
+        </section>
+
+        <section id="how-to-use" class="info-section">
+            <div class="container">
+                <h2>ℹ️ 이용 방법 및 알고리즘</h2>
+                <p>로또플러스는 단순한 무작위 번호 생성을 넘어, 사용자에게 즐거운 경험을 제공하기 위해 설계되었습니다. 저희 시스템은 다음과 같은 원리로 작동합니다.</p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>랜덤 추출</h3>
+                        <p>1부터 45까지의 숫자 중 중복되지 않는 6개의 숫자를 정교한 난수 생성 알고리즘을 통해 추출합니다.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>행운 게이지</h3>
+                        <p>각 번호 세트마다 부여되는 '행운 게이지'는 번호의 조합 점수를 시각적으로 표현하여 재미를 더합니다.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>실시간 생성</h3>
+                        <p>서버에 저장하지 않고 브라우저에서 실시간으로 생성되므로 보안과 개인정보 보호가 완벽합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="statistics" class="info-section alternate">
+            <div class="container">
+                <h2>📊 로또 통계와 전략</h2>
+                <p>로또 번호 선택에 정답은 없지만, 통계적인 접근은 선택의 재미를 높여줍니다.</p>
+                <ul>
+                    <li><strong>홀짝 비율:</strong> 보통 3:3 또는 2:4 비율로 번호가 구성되는 경우가 많습니다.</li>
+                    <li><strong>번호 합계:</strong> 6개 번호의 합이 121에서 180 사이일 확률이 통계적으로 높습니다.</li>
+                    <li><strong>연속 번호:</strong> 22, 23과 같은 연속 번호가 한 쌍 정도 포함되는 패턴이 자주 등장합니다.</li>
+                </ul>
+                <p class="note">* 위 정보는 재미를 위한 참고용이며 당첨을 보장하지 않습니다.</p>
+            </div>
+        </section>
+
+        <div id="contact" class="contact-container">
+            <h2>🤝 제휴 문의</h2>
+            <form action="https://formspree.io/f/mlgwlglo" method="POST">
+                <div class="form-group">
+                    <label for="name">성함/기업명</label>
+                    <input type="text" id="name" name="name" required placeholder="홍길동 / (주)컴퍼니">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">문의 내용</label>
+                    <textarea id="message" name="message" required placeholder="제휴 내용을 입력해주세요."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">문의하기</button>
+            </form>
         </div>
 
-        <div class="list" id="list"></div>
+        <div class="disqus-container">
+            <div id="disqus_thread"></div>
+            <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://project-jo.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+        </div>
+    </main>
 
-        <button id="generate-btn">번호 굴리기</button>
-    </div>
-
-    <div class="contact-container">
-        <h2>🤝 제휴 문의</h2>
-        <form action="https://formspree.io/f/mlgwlglo" method="POST">
-            <div class="form-group">
-                <label for="name">성함/기업명</label>
-                <input type="text" id="name" name="name" required placeholder="홍길동 / (주)컴퍼니">
-            </div>
-            <div class="form-group">
-                <label for="email">이메일 주소</label>
-                <input type="email" id="email" name="email" required placeholder="example@email.com">
-            </div>
-            <div class="form-group">
-                <label for="message">문의 내용</label>
-                <textarea id="message" name="message" required placeholder="제휴 내용을 입력해주세요."></textarea>
-            </div>
-            <button type="submit" class="submit-btn">문의하기</button>
-        </form>
-    </div>
-
-    <div class="disqus-container">
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://project-jo.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="privacy.html">개인정보처리방침</a> | 
+            <a href="terms.html">이용약관</a>
+        </div>
+        <p>&copy; 2026 로또플러스. All rights reserved.</p>
+    </footer>
 
     <script src="main.js"></script>
 </body>
