@@ -99,10 +99,12 @@ body {
     opacity: 0.85;
 }
 
+.headerRow > div { /* 모든 자식 div에 flex 적용 */
+    flex: 1;
+}
+
 .headerRow > div:last-child { /* 행운 게이지 텍스트만 선택 */
-    text-align: right;
-    flex-grow: 1; /* 오른쪽으로 최대한 밀어내기 */
-    padding-right: 18px; /* 배터리 여백에 맞춰 조정 */
+    text-align: right; /* 우측 정렬 */
 }
 
 .list {
@@ -118,7 +120,7 @@ body {
     align-items: center;
     justify-content: space-between;
     background: var(--bg-color);
-    padding: 20px;
+    padding: 20px 30px; /* 좌우 패딩을 늘려 간격 확보 (20px + 20% = 24px, 여유있게 30px) */
     border-radius: 15px;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
     position: relative; /* 자식 absolute 요소의 기준점 */
