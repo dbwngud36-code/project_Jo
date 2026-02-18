@@ -299,6 +299,13 @@ body {
     font-weight: 900;
     color: #ef4444;
     letter-spacing: 1px;
+    z-index: 4; /* Ensure it's above other elements */
+    animation: feverText-appear 0.4s ease-out forwards;
+}
+
+@keyframes feverText-appear {
+    0% { opacity: 0; transform: translate(-50%, 10px) scale(0.8); }
+    100% { opacity: 1; transform: translate(-50%, -20px) scale(1); }
 }
 
 /* Info & Contact common */
