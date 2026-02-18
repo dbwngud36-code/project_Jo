@@ -114,6 +114,7 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    position: relative; /* 자식 absolute 요소의 기준점 */
 }
 
 .balls {
@@ -304,8 +305,8 @@ body {
 }
 
 @keyframes feverText-appear {
-    0% { opacity: 0; transform: translate(-50%, 10px) scale(0.8); }
-    100% { opacity: 1; transform: translate(-50%, -20px) scale(1); }
+    0% { opacity: 0; transform: translate(-50%, 0) scale(0.5); }
+    100% { opacity: 1; transform: translate(-50%, -100%) scale(1); }
 }
 
 /* Info & Contact common */
