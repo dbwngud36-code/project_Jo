@@ -351,14 +351,26 @@ body {
 }
 .submit-btn { width: 100%; max-width: 600px; padding: 15px; border: none; border-radius: 12px; background: var(--btn-bg); color: white; font-weight: bold; cursor: pointer; }
 
-/* Fire Effect */
+/* Fire Effect - Updated to a more realistic flame */
 .fire {
-    position: absolute; top: -15px; right: -15px; width: 30px; height: 30px;
-    background: #ef4444; clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-    animation: flicker 0.08s infinite alternate; /* 더 빠르게 깜빡임 */
+    position: absolute;
+    top: -20px; /* 배터리 위쪽으로 이동 */
+    right: -10px; /* 배터리 오른쪽에 위치 */
+    width: 25px; /* 크기 조정 */
+    height: 35px; /* 크기 조정 */
+    background: radial-gradient(circle at 50% 10%, #ffeb3b, #ff9800, #f44336); /* 노랑->주황->빨강 그라데이션 */
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%; /* 불꽃 모양 */
+    box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ff9800, 0 0 30px #f44336; /* 글로우 효과 */
+    z-index: 5; /* feverText보다 위에 오도록 */
+    animation: fire-flicker 0.15s infinite alternate; /* 불꽃 깜빡임 애니메이션 */
+    filter: blur(1px); /* 부드러운 불꽃 표현 */
 }
 
-@keyframes flicker { from { transform: scale(1.2); opacity: 0.7; } to { transform: scale(1.5); opacity: 1; } }
+@keyframes fire-flicker {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+    100% { transform: scale(0.95) rotate(-2deg); opacity: 0.85; }
+}
 
 .site-footer { width: 100%; padding: 40px 20px; text-align: center; opacity: 0.8; }
 .footer-links a { color: var(--text-color); text-decoration: none; margin: 0 10px; font-size: 14px; }
